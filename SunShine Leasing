@@ -261,9 +261,9 @@
             <h2>Contact Us</h2>
             <div class="contact-form">
                 <form>
-                    <input type="text" name="name" placeholder="Steven Sloan" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Connect Now" required></textarea>
+                    <input type="text" name="name" placeholder="SunShine Leasing" required>
+                    <input type="email" name="email" placeholder="info@sunshineleasing.com" required>
+                    <textarea name="message" placeholder="Book Your Stay Now" required></textarea>
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
             </div>
