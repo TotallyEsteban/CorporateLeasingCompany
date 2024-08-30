@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SunShine Leasing - Premier Corporate Housing in Central Florida</title>
+    <title>FL SunShine Leasing - Premier Corporate Housing with Florida SunShine</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -214,7 +214,7 @@
     <header>
         <div class="container">
             <div id="branding">
-                <h1><span class="highlight">SunShine</span> Leasing</h1>
+                <h1><span class="highlight">FL</span> SunShine</span> Leasing</h1>
             </div>
             <button class="nav-toggle" aria-label="toggle navigation">
                 <i class="fas fa-bars"></i>
@@ -234,7 +234,7 @@
     <main>
         <section id="showcase">
             <div class="container">
-                <h1>Premier Corporate Housing in Central Florida</h1>
+                <h1>Premier Corporate Housing with Florida SunShine</h1>
                 <p>Experience comfort and convenience with our top-tier corporate leasing solutions.</p>
                 <a href="#contact" class="cta-button">Book Your Stay Now</a>
             </div>
@@ -242,9 +242,9 @@
 
         <section id="about" class="long-form">
             <div class="container">
-                <h2>About SunShine Leasing</h2>
-                <p>SunShine Leasing is Central Florida's premier corporate housing provider. We specialize in offering comfortable, convenient, and fully-furnished accommodations for business travelers, relocating professionals, and corporate clients.</p>
-                <p>Our properties are strategically located near major business centers, offering easy access to amenities and attractions. With SunShine Leasing, you're not just renting a space – you're embracing a lifestyle of comfort and convenience.</p>
+                <h2>About FL SunShine Leasing</h2>
+                <p>FL SunShine Leasing is Florida's premier corporate housing provider. We specialize in offering comfortable, convenient, and fully-furnished accommodations for business travelers, relocating professionals, and corporate clients.</p>
+                <p>Our properties are strategically located near major business centers, offering easy access to amenities and attractions. With FL SunShine Leasing, you're not just renting a space – you're embracing a lifestyle of comfort and convenience.</p>
                 <a href="#properties" class="cta-button">Explore Our Properties</a>
             </div>
         </section>
@@ -278,7 +278,7 @@
         <section id="services" class="long-form">
             <div class="container">
                 <h2>Our Services</h2>
-                <p>At SunShine Leasing, we go beyond just providing a place to stay. Our comprehensive services ensure that your corporate housing experience is seamless and stress-free.</p>
+                <p>At FL SunShine Leasing, we go beyond just providing a place to stay. Our comprehensive services ensure that your corporate housing experience is seamless and stress-free.</p>
                 <ul>
                     <li>Fully furnished accommodations</li>
                     <li>Utilities included</li>
@@ -335,7 +335,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 SunShine Leasing. All rights reserved.</p>
+        <p>&copy; 2024 FL SunShine Leasing. All rights reserved.</p>
     </footer>
 
     <script>
