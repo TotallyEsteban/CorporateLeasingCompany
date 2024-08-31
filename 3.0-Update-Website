@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FL SunShine Leasing - Premier Corporate Housing with Florida SunShine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #f9a826;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+        header nav ul li {
+            margin-left: 20px;
+        }
+        header .highlight, header .current a {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        header a:hover {
+            color: var(--secondary-color);
+            transition: 0.3s;
+        }
+
+        /* Responsive Navigation */
+        .nav-toggle {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            header nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background: var(--primary-color);
+                padding: 20px;
+            }
+            header nav ul.show {
+                display: flex;
+            }
+            header nav ul li {
+                margin: 10px 0;
+            }
+            .nav-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+
+        /* CTA Styles */
+        .cta-button {
+            display: inline-block;
+            font-size: 18px;
+            color: #fff;
+            background-color: var(--secondary-color);
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .grid-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Long-form Content */
+        .long-form {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .long-form h2 {
+            color: var(--primary-color);
+        }
+        .long-form p {
+            margin-bottom: 20px;
+        }
+
+        /* E-commerce */
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            transition: box-shadow 0.3s ease;
+        }
+        .product:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product h3 {
+            margin-top: 0;
+        }
+        .product .price {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #f9f9f9;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .social-icons {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .social-icons a {
+            color: var(--primary-color);
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #ffffff;
+            background-color: var(--primary-color);
+            text-align: center;
+        }
+
+        /* Listing Styles */
+        .listing-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .listing-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .listing-card .content {
+            padding: 20px;
+        }
+        .listing-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .listing-card .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .listing-card .amenity {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">FL</span> SunShine Leasing</h1> 
+                <p><span class="highlight">Florida's</span> Premier Corporate Housing Solution</p>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="showcase">
+            <div class="container">
+                <h1>Premier Corporate Housing with Florida SunShine</h1>
+                <p>Experience comfort and convenience with our top-tier corporate leasing solutions.</p>
+                <a href="#contact" class="cta-button">Book Your Stay Now</a>
+            </div>
+        </section>
+
+        <section id="about" class="long-form">
+            <div class="container">
+                <h2>About FL SunShine Leasing</h2>
+                <p>FL SunShine Leasing is Florida's premier corporate housing provider. We specialize in offering comfortable, convenient, and fully-furnished accommodations for business travelers, relocating professionals, and corporate clients.</p>
+                <p>Our properties are strategically located near major business centers, offering easy access to amenities and attractions. With FL SunShine Leasing, you're not just renting a space – you're embracing a lifestyle of comfort and convenience.</p>
+                <a href="#properties" class="cta-button">Explore Our Properties</a>
+            </div>
+        </section>
+
+        <section id="properties">
+            <div class="container">
+                <h2>Featured Florida Beach Homes</h2>
+                <div class="grid-container">
+                    <div class="listing-card">
+                        <img src="/api/placeholder/400/300" alt="Luxurious 3BR Beachfront Villa in Clearwater Beach">
+                        <div class="content">
+                            <h3>Luxurious 3BR Beachfront Villa in Clearwater Beach</h3>
+                            <p>Experience coastal living at its finest in this stunning 3-bedroom beachfront villa. Just steps from the crystal-clear waters of Clearwater Beach.</p>
+                            <p><strong>Price:</strong> $4,500/month</p>
+                            <div class="amenities">
+                                <span class="amenity">Private Pool</span>
+                                <span class="amenity">Ocean View</span>
+                                <span class="amenity">Modern Kitchen</span>
+                            </div>
+                            <a href="#" class="cta-button">View Details</a>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="/api/placeholder/400/300" alt="Spacious 4BR Family Home near Siesta Key">
+                        <div class="content">
+                            <h3>Spacious 4BR Family Home near Siesta Key</h3>
+                            <p>Perfect for relocating executives with families, this expansive 4-bedroom home offers ample space and is just a short drive from the world-famous Siesta Key Beach.</p>
+                            <p><strong>Price:</strong> $6,000/month</p>
+                            <div class="amenities">
+                                <span class="amenity">Large Pool</span>
+                                <span class="amenity">Outdoor Kitchen</span>
+                                <span class="amenity">Home Office</span>
+                            </div>
+                            <a href="#" class="cta-button">View Details</a>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="/api/placeholder/400/300" alt="Cozy 2BR Bungalow in St. Augustine Beach">
+                        <div class="content">
+                            <h3>Cozy 2BR Bungalow in St. Augustine</h3>
+                            <p>Immerse yourself in the charm of America's oldest city with this beautifully renovated 2-bedroom bungalow.</p>
+                            <p><strong>Price:</strong> $3,750/month</p>
+                            <div class="amenities">
+                                <span class="amenity">Heated Pool</span>
+                                <span class="amenity">Historic District Nearby</span>
+                                <span class="amenity">Renovated Interior</span>
+                            </div>
+                            <a href="#" class="cta-button">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="long-form">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>At FL SunShine Leasing, we go beyond just providing a place to stay. Our comprehensive services ensure that your corporate housing experience is seamless and stress-free.</p>
+                <ul>
+                    <li>Fully furnished accommodations</li>
+                    <li>Utilities included</li>
+                    <li>High-speed internet</li>
+                    <li>24/7 maintenance support</li>
+                    <li>Housekeeping services</li>
+                    <li>Flexible lease terms</li>
+                </ul>
+                <a href="#contact" class="cta-button">Inquire About Our Services</a>
+            </div>
+        </section>
+
+        <section id="products">
+            <div class="container">
+                <h2>FL SunShine Leasing Products</h2>
+                <p class="text-center mb-6">Enhance your stay with our curated selection of products</p>
+                <div class="grid-container">
+                    <div class="product">
+                        <img src="/api/placeholder/200/200" alt="Florida Welcome Package">
+                        <h3>Florida Welcome Package</h3>
+                        <p>Start your stay off right with our curated welcome package</p>
+                        <span class="price">$49.99</span>
+                        <button class="cta-button">Add to Cart</button>
+                    </div>
+                    <div class="product">
+                        <img src="/api/placeholder/200/200" alt="Ergonomic Desk Set">
+                        <h3>Ergonomic Desk Set</h3>
+                        <p>Upgrade your home office with our ergonomic essentials</p>
+                        <span class="price">$129.99</span>
+                        <button class="cta-button">Add to Cart</button>
+                    </div>
+                    <div class="product">
+                        <img src="/api/placeholder/200/200" alt="Beach Essentials Kit">
+                        <h3>Beach Essentials Kit</h3>
+                        <p>Everything you need for a perfect day at the beach</p>
+                        <span class="price">$79.99</span>
+                        <button class="cta-button">Add to Cart</button>
+                    </div>
+                    <div class="product">
+                        <img src="/api/placeholder/200/200" alt="Smart Home Starter Pack">
+                        <h3>Smart Home Starter Pack</h3>
+                        <p>Bring smart technology to your corporate housing</p>
+                        <span class="price">$199.99</span>
+                        <button class="cta-button">Add to Cart</button>
+                    </div>
+                <div class="text-center mt-8">
+                    <h3>Exclusive Offer for Florida SunShine Leasing Guests</h3>
+                    <p class="mb
+                    <section className="bg-blue-50 rounded-lg p-8 text-center">
+                        <h2 className="text-2xl font-semibold mb-4">SHOP NOW TO SAVE INSTANTLY</h2>
+                        <p className="text-lg mb-6">Use code SUNSHINE10 for 10% off your first purchase!</p>
+                    </span>
+                        <button class="cta-button">Shop Now</button>
+                      </section>
+                    </div>
+                    <section id="contact">
+                        <div class="container">
+                            <h2>Contact Us</h2>
+                            <div class="contact-form">
+                                <form>
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                    <input type="email" name="email" placeholder="Your Email" required>
+                                    <textarea name="message" placeholder="Your Message" required></textarea>
+                                    <button type="submit" class="cta-button">Send Message</button>
+                                </form>
+                            </div>
+                            <div class="social-icons">
+                                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <footer>
+                        <p>&copy; 2024 FL SunShine Leasing. All rights reserved.</p>
+                    </footer>
+                
+                    <script>
+                        // Simple JavaScript for smooth scrolling
+                        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                            anchor.addEventListener('click', function (e) {
+                                e.preventDefault();
+                
+                                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                                    behavior: 'smooth'
+                                });
+                            });
+                        });
+                
+                        // User journey tracking
+                        let userJourney = ['homepage'];
+                
+                        document.querySelectorAll('a, button').forEach(element => {
+                            element.addEventListener('click', function(e) {
+                                let step = this.textContent || this.innerText;
+                                userJourney.push(step);
+                                console.log('User Journey:', userJourney);
+                
+                                if (step.toLowerCase().includes('book') || step.toLowerCase().includes('contact')) {
+                                    console.log('Appointment set! Journey complete.');
+                                }
+                            });
+                        });
+                    </script>
+                  );
+                };
+                
+                export default ProductsPage;
+                
+                ```
