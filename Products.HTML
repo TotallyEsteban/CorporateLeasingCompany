@@ -1,0 +1,79 @@
+```tsx
+import React from 'react';
+import { ShoppingCart, Star, Package } from 'lucide-react';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+
+const products = [
+  { id: 1, name: 'Florida Welcome Package', price: 49.99, category: 'Welcome Packages', featured: true },
+  { id: 2, name: 'Ergonomic Desk Set', price: 129.99, category: 'Home Office Essentials', featured: true },
+  { id: 3, name: 'Beach Essentials Kit', price: 79.99, category: 'Florida Lifestyle', featured: true },
+  { id: 4, name: 'Smart Home Starter Pack', price: 199.99, category: 'Smart Home Devices', featured: true },
+  // Add more products as needed
+];
+
+const categories = [
+  'Welcome Packages', 'Bedding and Linens', 'Kitchen and Dining', 'Home Office Essentials',
+  'Florida Lifestyle', 'Comfort and Relaxation', 'Travel Accessories', 'Smart Home Devices'
+];
+
+const ProductCard = ({ product }) => (
+  <Card className="w-full max-w-sm">
+    <CardHeader>
+      <CardTitle className="text-lg">{product.name}</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <div className="h-40 bg-gray-200 rounded-md mb-4"></div>
+      <p className="text-2xl font-bold">${product.price.toFixed(2)}</p>
+      <p className="text-sm text-gray-500">{product.category}</p>
+    </CardContent>
+    <CardFooter>
+      <Button className="w-full">
+        <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
+      </Button>
+    </CardFooter>
+  </Card>
+);
+
+const ProductsPage = () => {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <header className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4">FL SunShine Leasing Products</h1>
+        <p className="text-xl text-gray-600">Enhance your stay with our curated selection of products</p>
+      </header>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Categories</h2>
+        <div className="flex flex-wrap gap-4">
+          {categories.map((category, index) => (
+            <Button key={index} variant="outline">
+              {category}
+            </Button>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Featured Products</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {products.filter(p => p.featured).map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-blue-50 rounded-lg p-8 text-center">
+        <h2 className="text-2xl font-semibold mb-4">Exclusive Offer for FL SunShine Leasing Guests</h2>
+        <p className="text-lg mb-6">Use code SUNSHINE10 for 10% off your first purchase!</p>
+        <Button size="lg">
+          <Package className="mr-2 h-5 w-5" /> Shop Now
+        </Button>
+      </section>
+    </div>
+  );
+};
+
+export default ProductsPage;
+
+```
